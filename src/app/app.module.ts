@@ -8,12 +8,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './store/header.store';
+import { RegisterNewsComponent } from './pages/register-news/register-news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterNewsComponent
   ],
   imports: [
     BrowserModule,

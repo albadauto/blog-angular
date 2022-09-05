@@ -26,5 +26,6 @@ Route.group(() => {
   });
   Route.post("/verifylogin", "AuthController.verifyLogin");
   Route.post("/registeruser", "UsersController.registerUser");
+  Route.resource("/news", "Newscontroller").apiOnly();
 
 }).prefix('api/v1');

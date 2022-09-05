@@ -51,8 +51,10 @@ export class HeaderComponent implements OnInit {
       .verifyLogin(this.frmAll.value)
       .subscribe((response: any) => {
         const token = response.token.token;
+        const usr_id = response.id;
         if (token) {
           sessionStorage.setItem('token', token);
+          sessionStorage.setItem('usr_id', usr_id);
           this.modal?.hide();
           this.store.dispatch(loginAction());
         }
@@ -61,5 +63,6 @@ export class HeaderComponent implements OnInit {
 
   unsignLogin() {
     sessionStorage.removeItem('token');
+    this.store.dispatch(unsign())
   }
 }

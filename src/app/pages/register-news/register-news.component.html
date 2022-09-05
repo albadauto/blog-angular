@@ -1,0 +1,28 @@
+<div class="container border border-dark mt-5">
+  <div class="row">
+    <div class="col text-center mt-4">
+      <h1>Novo registro de notícia</h1>
+    </div>
+  </div>
+
+  <form [formGroup]="frmGroupNews">
+    <div class="row">
+      <div class="col text-center mb-3">
+        <input type="text" class="form-control" placeholder="Titulo">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <textarea name="" id="" cols="30" rows="10" class="form-control"
+          placeholder="Insira aqui uma nova notícia"></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col text-center mb-3">
+        <button class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>
