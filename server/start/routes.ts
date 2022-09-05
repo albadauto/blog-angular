@@ -25,4 +25,6 @@ Route.group(() => {
     return { hello: 'world' };
   });
   Route.post("/verifylogin", "AuthController.verifyLogin");
+  Route.post("/registeruser", "UsersController.registerUser");
+
 }).prefix('api/v1');

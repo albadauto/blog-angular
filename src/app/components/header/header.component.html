@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">Blog Do Dautin</a>
+        <a class="navbar-brand" href="#">Blog Do Dautin </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,6 +19,7 @@
                         (click)="openModal()">
                         Login
                     </button>
+                    <button *ngIf="isLogged | async"class="btn btn-primary" (click)="unsignLogin()"> Unsign</button>
                 </li>
             </ul>
 
@@ -57,7 +58,7 @@
                 </div>
 
             </div>
-            
+
         </div>
     </div>
 </div>
