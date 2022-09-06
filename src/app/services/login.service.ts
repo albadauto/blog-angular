@@ -13,4 +13,12 @@ export class LoginService {
   public verifyLogin(formData: any): Observable<ILogin>{
     return this.http.post<ILogin>(this.loginApiUrl, formData);
   }
+
+  public checkLogin(){
+    if (sessionStorage.getItem("token") === ""){
+      return false
+    }else{
+      return true;
+    }
+  }
 }

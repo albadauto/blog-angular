@@ -3,10 +3,8 @@ import { Modal } from 'bootstrap';
 import { FormGroup, FormControl } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Store } from '@ngrx/store';
-import { ILogin } from 'src/app/models/login.interface';
 import {
   loginAction,
-  initialValue,
   unsign,
   IHeader,
 } from 'src/app/store/header.store';
