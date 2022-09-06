@@ -5,18 +5,18 @@
         </div>
     </div>
 
-    <div class="row">
+    <div *ngFor="let news of allNews" class="row">
         <div class="col">
             <div class="alert alert-primary">
-                <h3>Titulo da notícia</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a malesuada turpis. Pellentesque sed facilisis felis. Aliquam nec interdum ante. Donec eu orci vitae metus blandit venenatis in eu tellus. Etiam volutpat mauris et cursus sagittis. Mauris suscipit leo mauris, in convallis libero sodales ut. </p>
+                <h3>{{ news.title }}</h3>
+                <p>{{ news.text }}</p>
                 <div class="row">
                     <div class="col-1">
                         <a href="">Visualizar </a>
 
                     </div>
-                    <div class="col-11">
-                        <a href="">editar</a>
+                    <div class="col-11" *ngIf="edit">
+                        <a href="editNews/{{news.id}}">editar</a>
                     </div>
                 </div>
 

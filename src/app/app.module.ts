@@ -9,13 +9,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './store/header.store';
 import { RegisterNewsComponent } from './pages/register-news/register-news.component';
+import { NotifierModule } from 'angular-notifier';
+import { NgToastModule } from 'ng-angular-popup';
+import { EditNewsComponent } from './pages/edit-news/edit-news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    RegisterNewsComponent
+    RegisterNewsComponent,
+    EditNewsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import { RegisterNewsComponent } from './pages/register-news/register-news.compo
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({login: loginReducer}),
-
+    NotifierModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

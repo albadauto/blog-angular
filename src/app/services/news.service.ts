@@ -9,12 +9,16 @@ import { INews } from '../models/news.interface';
 })
 export class NewsService {
 
-  private apiNewsUrl: string = `${environment.APIURI}/registernews`
+  private apiNewsUrl: string = `${environment.APIURI}/news`
   constructor(private http: HttpClient) { }
 
 
   registerNews(formData: any): Observable<INews>{
     return this.http.post<INews>(this.apiNewsUrl, formData);
+  }
+
+  getAllNews(): Observable<INews>{
+    return this.http.get<INews>(this.apiNewsUrl)
   }
 
 }

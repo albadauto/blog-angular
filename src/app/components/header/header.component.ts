@@ -63,6 +63,8 @@ export class HeaderComponent implements OnInit {
 
   unsignLogin() {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('usr_id');
     this.store.dispatch(unsign())
+    window.location.reload();
   }
 }
