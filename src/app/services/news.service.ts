@@ -21,4 +21,8 @@ export class NewsService {
     return this.http.get<INews>(this.apiNewsUrl)
   }
 
+  getNewsById(id: any): Observable<INews>{
+    return this.http.get<INews>(`${this.apiNewsUrl}/${id}`)
+  }
+
 }

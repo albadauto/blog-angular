@@ -8,14 +8,14 @@ import { LoginService } from '../services/login.service';
 })
 export class AuthGuard implements CanActivate{
 
-  constructor(private login: LoginService, private router: Router) { }
+  constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    if (this.login.checkLogin()){
+    if(sessionStorage.getItem("token")){
       return true
+    }else{
+      this.router.navigate([''])
+      return false
     }
-
-    this.router.navigate(['/registernews'])
-    return false;
   }
 }
