@@ -83,7 +83,7 @@ export default class NewsController {
     }
   }
 
-  public async delete({ params, response }: HttpContextContract) {
+  public async destroy({ params, response }: HttpContextContract) {
     try {
       const news = await News.findBy("id", params.id)
       if (news){

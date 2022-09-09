@@ -29,7 +29,13 @@ export class HomeComponent implements OnInit {
         this.allNews = res.message;
       }
     });
-
-
   }
+
+  deleteNews(id: number){
+    return this.newsService.deleteNews(id).subscribe(() => {
+      this.allNews = this.allNews.filter((val) => val.id !== id);
+    })
+  }
+
+
 }

@@ -25,4 +25,12 @@ export class NewsService {
     return this.http.get<INews>(`${this.apiNewsUrl}/${id}`)
   }
 
+  deleteNews(id: any): Observable<INews>{
+    return this.http.delete<INews>(`${this.apiNewsUrl}/${id}`);
+  }
+
+  editNews(form: any, id: number): Observable<INews>{
+    return this.http.put<INews>(`${this.apiNewsUrl}/${id}`, form);
+  }
+
 }

@@ -1,4 +1,5 @@
 <div class="container mt-3">
+  <form [formGroup]="frmEdit" (ngSubmit)="editNews()">
   <div class="row">
     <div class="col text-center">
       <h1>Editar Notícia</h1>
@@ -6,13 +7,20 @@
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Título" [(ngModel)]="news.title">
+      <input type="text" class="form-control" placeholder="Título" [(ngModel)]="news.title" formControlName="title">
     </div>
   </div>
 
   <div class="row mt-3">
     <div class="col">
-      <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Noticia" [(ngModel)]="news.text"></textarea>
+      <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Noticia" [(ngModel)]="news.text" formControlName="text"></textarea>
     </div>
   </div>
+
+  <div class="row mt-3">
+    <div class="col text-center">
+      <button class="btn btn-primary" type="submit">Editar</button>
+    </div>
+  </div>
+  </form>
 </div>
